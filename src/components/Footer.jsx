@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { LOGO_URL } from '../utils/assets'
 
 const footerLinks = {
   'Institución': [
@@ -45,7 +46,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <div className="w-12 h-12 rounded-xl overflow-hidden ring-2 ring-white/10">
                 <img
-                  src="/images/logo.png"
+                  src={LOGO_URL}
                   alt="Logo"
                   className="w-full h-full object-cover"
                   onError={(e) => {

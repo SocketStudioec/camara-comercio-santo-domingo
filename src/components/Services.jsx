@@ -5,247 +5,238 @@ import { useInView } from '../hooks/useInView'
 const services = [
   {
     id: 'afiliacion',
+    photo: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80&auto=format&fit=crop',
     icon: '🤝',
-    category: 'Membresía',
+    tag: 'Membresía',
     title: 'Afiliación Empresarial',
-    short: 'Forma parte de la comunidad gremial más importante de la región.',
-    description: 'Al afiliarte a la Cámara de Comercio Santo Domingo, formas parte de una red de más de 800 empresas que trabajan unidos por el desarrollo del comercio regional. Disfruta de representación gremial, descuentos en servicios y acceso a programas exclusivos.',
-    benefits: ['Representación ante organismos públicos', 'Red de contactos empresariales', 'Descuentos en capacitaciones', 'Acceso a convenios y alianzas'],
-    color: 'from-blue-500 to-blue-700',
-    bg: 'bg-blue-50',
-    badge: 'Popular',
+    short: 'Ingresa a la red comercial más importante de los Tsáchilas.',
+    benefits: ['Representación gremial activa', 'Red de +800 empresas', 'Descuentos exclusivos', 'Acceso a convenios'],
+    accent: '#3b82f6',
+    popular: true,
   },
   {
     id: 'capacitacion',
+    photo: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80&auto=format&fit=crop',
     icon: '🎓',
-    category: 'Formación',
+    tag: 'Formación',
     title: 'Capacitación Continua',
-    short: 'Programas formativos para desarrollar tus competencias empresariales.',
-    description: 'Ofrecemos cursos y talleres diseñados para los empresarios y emprendedores de Santo Domingo. Desde gestión empresarial hasta habilidades digitales, nuestros programas te preparan para los desafíos del mercado moderno.',
-    benefits: ['Cursos presenciales y virtuales', 'Certificaciones reconocidas', 'Docentes especializados', 'Horarios flexibles para empresarios'],
-    color: 'from-emerald-500 to-emerald-700',
-    bg: 'bg-emerald-50',
-    badge: 'Nuevo',
+    short: 'Programas formativos diseñados para empresarios modernos.',
+    benefits: ['Cursos presenciales y online', 'Certificaciones reconocidas', 'Docentes especializados', 'Horarios flexibles'],
+    accent: '#10b981',
+    popular: false,
   },
   {
     id: 'comercio-exterior',
+    photo: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80&auto=format&fit=crop',
     icon: '🌐',
-    category: 'Internacional',
+    tag: 'Internacional',
     title: 'Comercio Exterior',
-    short: 'Lleva tu negocio al mercado internacional con nuestro apoyo.',
-    description: 'A través de alianzas con la Universidad UTE y el SECAP, brindamos capacitación especializada en comercio exterior para emprendedores que desean expandir sus negocios más allá de las fronteras nacionales.',
-    benefits: ['Trámites de importación/exportación', 'Asesoría en normativas internacionales', 'Alianzas con UTE y SECAP', 'Networking con empresas exportadoras'],
-    color: 'from-purple-500 to-purple-700',
-    bg: 'bg-purple-50',
-    badge: null,
+    short: 'Expande tu negocio más allá de las fronteras nacionales.',
+    benefits: ['Asesoría en normativas', 'Alianza con UTE', 'Contactos internacionales', 'Tramitología de exportación'],
+    accent: '#8b5cf6',
+    popular: false,
   },
   {
     id: 'certificaciones',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop',
     icon: '📋',
-    category: 'Certificación',
-    title: 'Certificaciones por Competencias',
-    short: 'Valida las habilidades de tu equipo con certificaciones oficiales.',
-    description: 'En colaboración con el SECAP (Servicio Ecuatoriano de Capacitación Profesional), ofrecemos programas de certificación en el área de Comercio y Ventas para trabajadores y empresarios del sector comercial.',
-    benefits: ['Perfiles: Comerciante minorista, Agente de ventas', 'Certificado oficial SECAP', 'Cajero de punto de venta', 'Abastecedor de perchas'],
-    color: 'from-orange-500 to-orange-700',
-    bg: 'bg-orange-50',
-    badge: null,
+    tag: 'Certificación',
+    title: 'Certificaciones SECAP',
+    short: 'Valida oficialmente las competencias de tu equipo comercial.',
+    benefits: ['Comerciante minorista', 'Agente de ventas', 'Cajero punto de venta', 'Certificado oficial SECAP'],
+    accent: '#f59e0b',
+    popular: false,
   },
   {
     id: 'ferias',
+    photo: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop',
     icon: '🎪',
-    category: 'Eventos',
+    tag: 'Eventos',
     title: 'Ferias y Eventos',
-    short: 'Espacios para exhibir tus productos y conectar con clientes.',
-    description: 'Organizamos ferias comerciales, ruedas de negocios y eventos empresariales a lo largo del año, brindando a los afiliados la oportunidad de exhibir sus productos, generar contactos y expandir su mercado.',
-    benefits: ['Ferias anuales con alta asistencia', 'Ruedas de negocios B2B', 'Eventos de networking', 'Visibilidad para tu marca'],
-    color: 'from-rose-500 to-rose-700',
-    bg: 'bg-rose-50',
-    badge: null,
+    short: 'Exhibe tu marca en los eventos comerciales de la región.',
+    benefits: ['Ferias anuales masivas', 'Ruedas de negocios B2B', 'Networking empresarial', 'Visibilidad de marca'],
+    accent: '#ef4444',
+    popular: false,
   },
   {
     id: 'representacion',
+    photo: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80&auto=format&fit=crop',
     icon: '⚖️',
-    category: 'Gremial',
+    tag: 'Gremial',
     title: 'Representación Gremial',
-    short: 'Tu voz ante el gobierno y organismos reguladores.',
-    description: 'Actuamos como representantes legítimos del sector comercial ante el gobierno local, provincial y nacional, promoviendo políticas favorables para el desarrollo empresarial y defendiendo los derechos de nuestros afiliados.',
-    benefits: ['Interlocución con el gobierno', 'Defensa de intereses sectoriales', 'Participación en políticas públicas', 'Asesoría jurídica empresarial'],
-    color: 'from-slate-500 to-slate-700',
-    bg: 'bg-slate-50',
-    badge: null,
+    short: 'Tu voz ante el gobierno, autoridades y organismos reguladores.',
+    benefits: ['Interlocución gubernamental', 'Defensa de derechos', 'Políticas públicas', 'Asesoría jurídica'],
+    accent: '#64748b',
+    popular: false,
   },
 ]
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-}
-const cardVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
-}
-
 export default function Services() {
-  const [sectionRef, inView] = useInView()
-  const [selected, setSelected] = useState(null)
+  const [ref, inView] = useInView()
+  const [hover, setHover] = useState(null)
 
   return (
-    <section id="servicios" className="py-24 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={sectionRef}>
+    <section id="servicios" className="py-24 overflow-hidden" style={{ background: '#f8fafc' }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
 
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="max-w-2xl mb-16"
         >
-          <span className="badge-navy text-xs tracking-widest uppercase px-4 mb-4 inline-block">Nuestros Servicios</span>
-          <h2 className="section-title gradient-text-navy mb-4">
-            Todo lo que necesitas para<br className="hidden sm:block" /> crecer como empresario
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px w-8" style={{ background: '#f59e0b' }} />
+            <span className="text-xs tracking-[0.18em] uppercase font-semibold" style={{ color: '#0d2659' }}>Servicios</span>
+          </div>
+          <h2 className="font-heading font-black leading-tight mb-4" style={{ fontSize: 'clamp(2rem,4vw,3.2rem)', color: '#0d2659' }}>
+            Todo lo que necesitas para<br />crecer como empresario
           </h2>
-          <div className="divider-gold mx-auto mb-6" />
-          <p className="section-subtitle max-w-2xl mx-auto">
-            Ofrecemos una gama completa de servicios diseñados para impulsar la competitividad
-            y el crecimiento de los negocios en Santo Domingo de los Tsáchilas.
+          <p className="text-lg leading-relaxed" style={{ color: '#6b7280' }}>
+            Una gama completa de servicios diseñados para impulsar la competitividad
+            de tu negocio en Santo Domingo de los Tsáchilas.
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        {/* Photo-card grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {services.map((svc, i) => (
             <motion.div
               key={svc.id}
-              variants={cardVariants}
-              className="group card cursor-pointer relative overflow-hidden"
-              onClick={() => setSelected(selected?.id === svc.id ? null : svc)}
-              whileHover={{ y: -6 }}
+              initial={{ opacity: 0, y: 28 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.08 * i, duration: 0.6, ease: [0.16,1,0.3,1] }}
+              className="group relative overflow-hidden rounded-2xl cursor-pointer"
+              style={{ aspectRatio: '4/3', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
+              onMouseEnter={() => setHover(svc.id)}
+              onMouseLeave={() => setHover(null)}
             >
-              {/* Badge */}
-              {svc.badge && (
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="badge bg-amber-400 text-amber-900 font-bold text-xs">{svc.badge}</span>
+              {/* Photo */}
+              <motion.img
+                src={svc.photo}
+                alt={svc.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                animate={{ scale: hover === svc.id ? 1.08 : 1 }}
+                transition={{ duration: 0.6, ease: [0.16,1,0.3,1] }}
+              />
+
+              {/* Default overlay */}
+              <div className="absolute inset-0 transition-all duration-500"
+                style={{ background: hover === svc.id
+                  ? 'linear-gradient(0deg, rgba(13,38,89,0.96) 0%, rgba(13,38,89,0.7) 50%, rgba(13,38,89,0.3) 100%)'
+                  : 'linear-gradient(0deg, rgba(13,38,89,0.92) 0%, rgba(13,38,89,0.5) 55%, rgba(0,0,0,0.15) 100%)'
+                }} />
+
+              {/* Popular badge */}
+              {svc.popular && (
+                <div className="absolute top-4 right-4 z-10 badge-gold text-xs font-bold px-3 py-1 rounded-full"
+                  style={{ background: '#f59e0b', color: '#0d2659' }}>
+                  Popular
                 </div>
               )}
 
-              {/* Top gradient bar */}
-              <div className={`h-1.5 w-full bg-gradient-to-r ${svc.color}`} />
-
-              <div className="p-6">
-                {/* Icon */}
-                <motion.div
-                  className={`w-14 h-14 ${svc.bg} rounded-2xl flex items-center justify-center text-2xl mb-4`}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  {svc.icon}
-                </motion.div>
-
-                {/* Category */}
-                <span className="text-xs font-bold text-gray-400 tracking-widest uppercase mb-2 block">
-                  {svc.category}
-                </span>
-
-                {/* Title */}
-                <h3 className="font-heading font-bold text-xl text-gray-900 mb-2 group-hover:text-blue-900 transition-colors duration-200">
-                  {svc.title}
-                </h3>
-
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{svc.short}</p>
-
-                {/* Expand indicator */}
-                <div className="flex items-center gap-1 text-blue-600 text-sm font-semibold">
-                  <span>{selected?.id === svc.id ? 'Ver menos' : 'Ver más'}</span>
-                  <motion.svg
-                    className="w-4 h-4"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    animate={{ rotate: selected?.id === svc.id ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </motion.svg>
+              {/* Content */}
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
+                {/* Tag */}
+                <div className="mb-2">
+                  <span className="text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full"
+                    style={{ background: `${svc.accent}33`, color: svc.accent, border: `1px solid ${svc.accent}55` }}>
+                    {svc.tag}
+                  </span>
                 </div>
 
-                {/* Expanded details */}
+                {/* Icon + Title */}
+                <div className="flex items-center gap-2 mb-1.5">
+                  <span className="text-xl">{svc.icon}</span>
+                  <h3 className="font-heading font-bold text-white text-lg leading-tight">{svc.title}</h3>
+                </div>
+
+                {/* Short desc */}
+                <p className="text-sm leading-relaxed mb-3" style={{ color: 'rgba(255,255,255,0.72)' }}>
+                  {svc.short}
+                </p>
+
+                {/* Benefits – visible on hover */}
                 <AnimatePresence>
-                  {selected?.id === svc.id && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
+                  {hover === svc.id && (
+                    <motion.ul
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16,1,0.3,1] }}
+                      className="space-y-1.5 overflow-hidden"
                     >
-                      <div className="pt-4 border-t border-gray-100 mt-4">
-                        <p className="text-gray-600 text-sm leading-relaxed mb-4">{svc.description}</p>
-                        <ul className="space-y-2">
-                          {svc.benefits.map((b) => (
-                            <li key={b} className="flex items-start gap-2 text-sm text-gray-600">
-                              <svg className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                              </svg>
-                              {b}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </motion.div>
+                      {svc.benefits.map(b => (
+                        <li key={b} className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                          <svg className="w-3.5 h-3.5 flex-shrink-0" style={{ color: svc.accent }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {b}
+                        </li>
+                      ))}
+                    </motion.ul>
                   )}
                 </AnimatePresence>
+
+                {/* CTA arrow */}
+                <motion.div
+                  className="flex items-center gap-1.5 mt-3 font-semibold text-sm"
+                  style={{ color: svc.accent }}
+                  animate={{ x: hover === svc.id ? 4 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Saber más
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </motion.div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* CTA Banner */}
+        {/* CTA Full Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.7 }}
-          className="mt-16 relative overflow-hidden rounded-3xl"
-          style={{ background: 'linear-gradient(135deg, #0d2659 0%, #1a3a8f 50%, #1e40af 100%)' }}
+          transition={{ delay: 0.5 }}
+          className="relative overflow-hidden rounded-3xl"
         >
-          <div className="absolute inset-0 opacity-5"
-            style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '25px 25px' }} />
-          <div className="relative z-10 px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Background photo */}
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1553484771-047a44eee27b?w=1400&q=70&auto=format&fit=crop"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(100deg, rgba(13,38,89,0.97) 0%, rgba(13,38,89,0.85) 50%, rgba(26,58,143,0.8) 100%)' }} />
+          </div>
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 px-10 py-12">
             <div>
-              <h3 className="font-heading font-bold text-white text-2xl md:text-3xl mb-2">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="h-px w-6" style={{ background: '#f59e0b' }} />
+                <span className="text-xs tracking-widest uppercase font-semibold" style={{ color: '#fcd34d' }}>Únete hoy</span>
+              </div>
+              <h3 className="font-heading font-black text-white text-2xl lg:text-3xl mb-2">
                 ¿Listo para impulsar tu negocio?
               </h3>
-              <p className="text-white/70">
-                Únete a los +800 empresarios que confían en nosotros para crecer.
-              </p>
+              <p style={{ color: 'rgba(255,255,255,0.6)' }}>Únete a los +800 empresarios que confían en la Cámara de Comercio.</p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 flex-shrink-0">
               <motion.a
                 href="#afiliate"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.querySelector('#afiliate')?.scrollIntoView({ behavior: 'smooth' })
-                }}
+                onClick={e => { e.preventDefault(); document.querySelector('#afiliate')?.scrollIntoView({ behavior: 'smooth' }) }}
                 className="btn-primary px-7 py-3.5 font-bold whitespace-nowrap"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                Afiliarme Ahora
-              </motion.a>
+                whileHover={{ scale: 1.04 }}
+              >Afiliarme Ahora</motion.a>
               <motion.a
                 href="#contacto"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' })
-                }}
+                onClick={e => { e.preventDefault(); document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' }) }}
                 className="btn-secondary px-7 py-3.5 font-bold whitespace-nowrap"
-                whileHover={{ scale: 1.03 }}
-              >
-                Más Información
-              </motion.a>
+                whileHover={{ scale: 1.04 }}
+              >Más Información</motion.a>
             </div>
           </div>
         </motion.div>
